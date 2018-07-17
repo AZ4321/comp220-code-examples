@@ -27,7 +27,10 @@
     <ClCompile Include="BaseGame\IMGUI\imgui_impl_sdl_gl3.cpp" />
     <ClCompile Include="BaseGame\Timer.cpp" />
     <ClCompile Include="Renderer\OpenGLRenderer.cpp" />
+    <ClCompile Include="Renderer\OpenGLShader.cpp" />
+    <ClCompile Include="Renderer\OpenGLShaderProgram.cpp" />
     <ClCompile Include="Renderer\OpenGLVertexBuffer.cpp" />
+    <ClCompile Include="Renderer\OpenGLVertexLayout.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BaseGame\BaseGame.h" />
@@ -41,8 +44,13 @@
     <ClInclude Include="BaseGame\IMGUI\stb_truetype.h" />
     <ClInclude Include="BaseGame\Timer.h" />
     <ClInclude Include="Renderer\OpenGLRenderer.h" />
+    <ClInclude Include="Renderer\OpenGLShader.h" />
+    <ClInclude Include="Renderer\OpenGLShaderProgram.h" />
     <ClInclude Include="Renderer\OpenGLVertexBuffer.h" />
+    <ClInclude Include="Renderer\OpenGLVertexLayout.h" />
     <ClInclude Include="Renderer\Renderer.h" />
+    <ClInclude Include="Renderer\Shader.h" />
+    <ClInclude Include="Renderer\ShaderProgram.h" />
     <ClInclude Include="Renderer\VertexBuffer.h" />
     <ClInclude Include="Renderer\VertexLayout.h" />
   </ItemGroup>
@@ -105,6 +113,7 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
+    <IncludePath>C:\Users\AZ203899\Documents\GIT\comp220-code-examples\Libraries\glew-2.1.0\include;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
@@ -139,11 +148,15 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>C:\Users\AZ203899\Documents\GIT\comp220-code-examples\Libraries\SDL2-2.0.6\include;C:\Users\AZ203899\Documents\GIT\comp220-code-examples\Libraries\glm;C:\Users\AZ203899\Documents\GIT\comp220-code-examples\Libraries\glew-2.1.0\include\GL;C:\Users\AZ203899\Documents\GIT\comp220-code-examples\Libraries\SDL2_image-2.0.1\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
+    <Lib>
+      <AdditionalLibraryDirectories>C:\Users\AZ203899\Documents\GIT\comp220-code-examples\Libraries\SDL2_image-2.0.1\lib;C:\Users\AZ203899\Documents\GIT\comp220-code-examples\Libraries\SDL2-2.0.6\lib;C:\Users\AZ203899\Documents\GIT\comp220-code-examples\Libraries\glew-2.1.0\lib;C:\Users\AZ203899\Documents\GIT\comp220-code-examples\Libraries\glm;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
